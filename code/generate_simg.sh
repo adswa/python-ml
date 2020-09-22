@@ -11,9 +11,5 @@ neurodocker generate singularity \
 --base=neurodebian:buster-non-free \
 --pkg-manager=apt  \
 --install datalad \
---miniconda create_env=ml \
-            conda_install='python=3.8 scikit-learn scikit-image pandas numpy' \
-            activate=true \
---run-bash 'source activate ml' \
---entrypoint='/neurodocker/startup.sh' \
+--run-bash 'pip install numpy pandas scikit-learn scikit-image' \
 > envs/Singularity.$1
