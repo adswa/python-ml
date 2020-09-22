@@ -14,5 +14,6 @@ neurodocker generate singularity \
 --miniconda create_env=ml \
             conda_install='python=3.8 scikit-learn scikit-image pandas numpy' \
             activate=true \
+--run-bash 'source activate ml' \
 --entrypoint='/neurodocker/startup.sh' \
 > envs/Singularity.$1
